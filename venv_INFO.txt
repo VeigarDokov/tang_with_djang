@@ -2,3 +2,7 @@
 django
 pillow
 ipython
+
+
+## commands ###
+python manage.py runserver ## start localmachine webserver
