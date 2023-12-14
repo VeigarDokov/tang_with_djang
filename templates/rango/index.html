@@ -16,9 +16,15 @@
     </div>
 
     <div>
-      <a href="/rango/about/">O Nama</a><br />
-      <img src="{% static "images/logo.png" %}"
-           alt="Smart-Relay d.o.o logo" />
+      <a href="/rango/smart_house.html">Pametna-Kuća</a><br />
+      <!-- static as a link to homepage -->
+      <a href="/">
+        <img src="{% static "images/logo.png" %}"
+             alt="Smart-Relay d.o.o logo" />
+      <a href="/rango/smart_house.html">
+        <img src="{{ MEDIA_URL }}smart_house.png"
+             alt="Smart-Relay d.o.o logo" />
+      </a>
     </div>
   </body>
 
