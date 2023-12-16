@@ -14,3 +14,16 @@ sifU: smartrelaycuto
 python manage.py makemigrations "rango"
 python manage.py migrate
 python manage.py shell
+
+## TO ENABLE DJANGO ADMIN PAGE COLLECT STATICFILES ##
+pip install whitenoise
+## in project settings in MIDDLEWARE list add: ##
+'whitenoise.middleware.WhiteNoiseMiddleware'
+## add two more wariables
+STATIC_ROOT = BASE_DIR / 'static'                                                                 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+## remove STATIC_DIR from STATICFILES_DIRS ##
+STATICFILES_DIRS = [STATIC_DIR, ]  # tang wit djang version
+STATICFILES_DIRS = []
+## run command:
+python manage.py collectstatic
