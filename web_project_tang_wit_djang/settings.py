@@ -45,9 +45,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # help django admin with static files'
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,13 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Static files directories
-# Help django web app to load admin static files
-# STATICFILES_DIRS = [STATIC_DIR, ] # tang wit djang version
-STATICFILES_DIRS = []
-
-# Help django web app to load admin static files
-STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_DIRS = [STATIC_DIR, ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
