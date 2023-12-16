@@ -6,3 +6,11 @@ ipython
 
 ## commands ###
 python manage.py runserver ## start localmachine webserver
+
+python manage.py migrate
+python manage.py createsuperuser
+supU: cuto
+sifU: smartrelaycuto
+python manage.py makemigrations "rango"
+python manage.py migrate
+python manage.py shell
