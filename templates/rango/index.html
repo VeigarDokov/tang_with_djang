@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html>
-
   <head>
     <title> Smart-Relay d.o.o</title>
   </head>
-
+    
   <body>
-    <h1>Smart-Relay d.o.o je tvrtka...</h1>
+    <h1><a href="/">Smart-Relay d.o.o</a><br /></h1> 
     <div>
-      Pametna-Kuca, Elektro-instalacie...<br /> 
-      <strong>{{ boldmessage }}</strong><br />
-      <strong>{{ malamaca }}</strong><br />
-    </div>
 
-    <div>
-      <a href="/rango/smart_house.html">Pametna-Kuća</a><br />
-      <!-- static as a link to homepage -->
-      <a href="/">
-        <img src="{% static "images/logo.png" %}"
-             alt="Smart-Relay d.o.o logo" />
-      <a href="/rango/smart_house.html">
-        <img src="{{ MEDIA_URL }}smart_house.png"
-             alt="Smart-Relay d.o.o logo" />
-      </a>
+    <h1>Najdraže iz ponnude</a><br /></h1> 
+
+    {% if categories %}
+    <ul>
+      {% for category in categories %}
+      <li>
+          <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <strong> There are no categories present.</strong>
+    {% endif %}
+
+    <h1>Najviše Pregleda</h1> 
+
+    {% if pages %}
+      <ul>
+      {% for page in pages %}
+        <li>
+          <a href="{{ page.url }}">{{ page.title }}</a>
+        </li>
+      {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No pages currently in category.</strong>
+    {% endif %}
+  
     </div>
+  
+      <div>
+          <!--      Pametna-Kuca, Elektro-instalacie...<br /> -->
+        <strong>{{ boldmessage }}</strong><br />
+        <strong>{{ malamaca }}</strong><br />
+      </div>
+  
+      <div>
+        <a href="/rango/smart_house.html">Pametna-Kuća</a><br />
+        <!-- static as a link to homepage -->
+        <a href="/">
+          <img src="{% static "images/logo.png" %}"
+               alt="Smart-Relay d.o.o logo" />
+        <a href="/rango/smart_house.html">
+          <img src="{{ MEDIA_URL }}smart_house.png"
+               alt="Smart-Relay d.o.o logo" />
+        </a>
+      </div>
   </body>
-
-
 </html>
