@@ -1,0 +1,21 @@
+{% extends 'rango/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    {{ category.name }}
+{% endblock %}}
+
+{% block body_block %}
+
+<div style="max-width: 500px; margin: 1 auto; 10px;">    
+  <div class="container-fluid">
+    <div class="row">
+
+      <img src="{% static "images/logo.png" %}" alt="Smart-Relay d.o.o logo">
+      <img src="{{ MEDIA_URL }}smart_house.png" alt="Smart-Relay d.o.o logo">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

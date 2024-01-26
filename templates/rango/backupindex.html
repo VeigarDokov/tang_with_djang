@@ -1,0 +1,93 @@
+{% extends 'rango/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    {{ category.name }}
+{% endblock %}}
+
+{% block body_block %}
+
+    <h1><a href="/">Smart-Relay d.o.o</a><br /></h1> 
+    {% if user.is_authenticated %}
+      Dobrodosli {{ user.username }}!
+    {% else %}
+    <h4>Login for more fetures!</h4>
+    {% endif %}
+
+    <div>
+    <a href="/rango/add_category/">Add a new Category</a><br />
+    <a href="/rango/contact_form/">Kontaktiraje nas</a><br />
+    <h2>Contact Us</h2>
+    <form method="post" action="/rango/contact_form/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+<!--
+    <h2>Contact Us</h2>
+    <form method="post" action="/rango/contact_form/" class="form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">Name:</label>
+            {{ form.name }}
+        </div>
+    
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+        </div>
+    
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+-->
+    <h1>Najdraže iz ponnude</a><br /></h1> 
+
+    {% if categories %}
+    <ul>
+      {% for category in categories %}
+      <li>
+          <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <strong> There are no categories present.</strong>
+    {% endif %}
+
+    <h1>Najviše Pregleda</h1> 
+
+    {% if pages %}
+      <ul>
+      {% for page in pages %}
+        <li>
+          <a href="{{ page.url }}">{{ page.title }}</a>
+        </li>
+      {% endfor %}
+        </ul>
+    {% else %}
+        <strong>No pages currently in category.</strong>
+    {% endif %}
+
+    </div>
+  
+      <div>
+          <!--      Pametna-Kuca, Elektro-instalacie...<br /> -->
+        <strong>{{ boldmessage }}</strong><br />
+        <strong>{{ malamaca }}</strong><br />
+      </div>
+
+      <div class="container-fluid">
+        <a href="/rango/smart_house.html">Pametna-Kuća</a><br />
+        <!-- static as a link to homepage -->
+        <a href="/">
+          <img src="{% static "images/logo.png" %}"
+               class="img-responsive img-round"
+               alt="Smart-Relay d.o.o logo" />
+        <a href="/rango/smart_house.html">
+          <img src="{{ MEDIA_URL }}smart_house.png"
+               alt="Smart-Relay d.o.o logo" />
+        </a>
+      </div>
+{% endblock %}

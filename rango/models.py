@@ -1,6 +1,7 @@
 """Required modules"""
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -36,3 +37,27 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ContactMessage(models.Model):
+    """Contatc via web"""
+    name = models.CharField(max_length=40)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+    datetime_submitted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
+class UserProfile(models.Model):
+    """ This line is required. links UserProfile to user model instance"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    # The additiona attributes we wish to include.
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+
+    def __str__(self):
+        return self.user.username

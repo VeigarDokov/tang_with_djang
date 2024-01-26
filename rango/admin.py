@@ -1,6 +1,6 @@
 """Required modules for admin page"""
 from django.contrib import admin
-from rango.models import Category, Page
+from rango.models import Category, Page, ContactMessage, UserProfile
 
 
 class PageAdmin(admin.ModelAdmin):
@@ -13,8 +13,15 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
+class ContactMessageAdmin(admin.ModelAdmin):
+    """Make name, email, date-time visible on admin page"""
+    list_display = ('name', 'email', 'subject', 'datetime_submitted')
+
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Page, PageAdmin)
+admin.site.register(ContactMessage, ContactMessageAdmin)
+admin.site.register(UserProfile)
 # adjust Django administration to Smart Relay d.o.o in django system file
 # visit nex file on vebserver because it is not inclouded in git:
 # /venv_tang_wit_djang/lib/python3.11/site-packages/django/contrib/admin/

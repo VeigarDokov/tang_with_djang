@@ -138,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # add by veigar
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+# redirect not loged in users
+LOGIN_URL = '/rango/login/'
