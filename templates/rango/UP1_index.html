@@ -3,6 +3,7 @@
 {% load rango_template_tags %}
 <html lang="en">
     <head>
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -44,6 +45,8 @@
                 </div>
             </div>
         </nav>
+
+
         <!-- Masthead-->
         <header class="masthead bg-dark text-white text-center">
             <div class="container d-flex align-items-center flex-column">
@@ -62,6 +65,8 @@
                 <!--društvo s ograničenom odgovornošću za proizvodnju, nabavu, ugradnju i pametne solucije-->
             </div>
         </header>
+
+
         <!-- O nama Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
@@ -81,6 +86,7 @@
                         Naša posvećenost inovacijama omogućava nam da pratimo najnovije trendove u industriji te pružamo cutting-edge rješenja koja odgovaraju Vašim potrebama.
                         Bavimo se elektroinstalacijama na svim razinama, od stambenih objekata do industrijskih postrojenja. 
                         Kvaliteta, pouzdanost i brza implementacija osiguravaju da vaši električni sustavi rade učinkovito i sigurno.</p></div>
+
                     <div class="col-lg-4 me-auto"><p class="lead">
                         Uz Smart Relay, Vaš dom postaje pametan dom. Integriramo najnovije tehnologije kako biste imali potpunu kontrolu nad rasvjetom, grijanjem, 
                         sigurnosnim sustavima i mnogo više, pružajući vam udobnost i energetsku učinkovitost.
@@ -102,6 +108,9 @@
                 </div>
             </div>
         </section>
+
+
+
         <!-- Ponuda Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
@@ -124,6 +133,7 @@
                             <img class="img-fluid" src="{% static 'assets/p4.png' %}" alt="..." />
                         </div>
                     </div>
+
                     <!-- Portfolio Item 2 -->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
@@ -142,6 +152,7 @@
                             <img class="img-fluid" src="{% static 'assets/sp10.png' %}""assets/img/portfolio/circus.png" alt="..." />
                         </div>
                     </div>
+                    
                     <!-- Portfolio Item 4 -->
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
@@ -151,6 +162,7 @@
                             <img class="img-fluid" src="{% static 'assets/ei10.png' %}" alt="..." />
                         </div>
                     </div>
+                    
                     <!-- Portfolio Item 5 -->
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
@@ -160,21 +172,27 @@
                             <img class="img-fluid" src="{% static 'assets/vn10.png' %}" alt="..." />
                         </div>
                     </div>
+                    
                     <!-- Portfolio Item 6
                     <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
                         </div>
                     </div>
                     -->
+
                 </div>
             </div>
         </section>
-        <!--image slide-->
-        <section class="page-section bg-dark text-white text-center" id="galerija">
+
+
+
+ 
+        <!-- Masthead-->
+        <header class="page-section bg-primary text-white text-center" id="galerija">
             <div class="container d-flex align-items-center flex-column">
                 <h1 class="masthead-heading text-uppercase mb-0">Galerija</h1>
                 <!-- Icon Divider-->
@@ -183,75 +201,47 @@
                     <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0"> </br> </p>
+                <!--društvo s ograničenom odgovornošću za proizvodnju, nabavu, ugradnju i pametne solucije-->
             </div>
-            <div class="slide-image" />
-                <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-                <!--imnage slider start-->
-                <div class="slider">
-                    <div class="sliders">
-                        <!--radio buttons start-->
-                        <input type="radio" name="radio-btn" id="radio1">
-                        <input type="radio" name="radio-btn" id="radio2">
-                        <input type="radio" name="radio-btn" id="radio3">
-                        <input type="radio" name="radio-btn" id="radio4">
-                        <input type="radio" name="radio-btn" id="radio5">
-                        <input type="radio" name="radio-btn" id="radio6">
-                        <!--radio buttons end-->
-                        <!--slide images start-->
-                        <div class="slide first">
-                           <img src="{% static 'p1.jpg' %}" alt="">
-                        </div>
-                        <div class="slide">
-                           <img src="{% static 'p2.jpg' %}" alt="">
-                        </div>
-                        <div class="slide">
-                           <img src="{% static 'p3.jpg' %}" alt="">
-                        </div>
-                        <div class="slide">
-                           <img src="{% static 'p4.jpg' %}" alt="">
-                        </div>
-                        <div class="slide">
-                           <img src="{% static 'p5.jpg' %}" alt="">
-                        </div>
-                        <div class="slide">
-                           <img src="{% static 'p6.jpg' %}" alt="">
-                        </div>
-                        <!--slide images end-->
-                        <!--automatic navigation start-->
-                        <div class="navigation-auto">
-                            <div class="auto-btn1"></div>
-                            <div class="auto-btn2"></div>
-                            <div class="auto-btn3"></div>
-                            <div class="auto-btn4"></div>
-                            <div class="auto-btn5"></div>
-                            <div class="auto-btn6"></div>
-                        </div>
-                        <!--automatic navigation end-->
-                    </div>
-                    <!--manual navigation start-->
-                    <div class="navigation-manual">
-                        <label for="radio1" class="manual-btn"></label>
-                        <label for="radio2" class="manual-btn"></label>
-                        <label for="radio3" class="manual-btn"></label>
-                        <label for="radio4" class="manual-btn"></label>
-                        <label for="radio5" class="manual-btn"></label>
-                        <label for="radio6" class="manual-btn"></label>
-                    </div>
-                    <!--manual navigation end-->
+                <!-- Image Carousel -->
+                <div class="image-carousel">
+                    <img src="{% static 'assets/p1.jpg' %}" alt="Image 1" class="active" style="width: 100%; height: 500px;">
+                    <img src="{% static 'assets/p2.jpg' %}" alt="Image 2" style="width: 100%; height: 500px;">
+                    <img src="{% static 'assets/p3.jpg' %}" alt="Image 3" style="width: 100%; height: 500px;">
+                    <img src="{% static 'assets/p4.jpg' %}" alt="Image 4" style="width: 100%; height: 500px;">
+                    <img src="{% static 'assets/p5.jpg' %}" alt="Image 5" style="width: 100%; height: 500px;">
                 </div>
-                <!--imnage slider stop-->
                 <script type="text/javascript">
-                var counter = 1;
-                setInterval(function(){
-                    document.getElementById('radio' + counter).checked = true;
-                    counter++;
-                    if(counter > 5){
-                        count = 1;
-                    }
-                }, 2000);
+                    $(document).ready(function() {
+                        // Set the interval for changing images (in milliseconds)
+                        var interval = 3000; // Change every 3 seconds
+                
+                        // Function to handle image changing
+                        function changeImage() {
+                            var $active = $('.image-carousel img.active');
+                            var $next = ($active.next().length > 0) ? $active.next() : $('.image-carousel img:first');
+                
+                            $active.fadeOut(function() {
+                                $active.removeClass('active');
+                                $next.fadeIn().addClass('active');
+                            });
+                        }
+                
+                        // Initial state: hide all images except the first one
+                        $('.image-carousel img:not(:first)').hide();
+                
+                        // Start the interval for changing images
+                        setInterval(changeImage, interval);
+                    });
                 </script>
             </div>
-        </section>
+        </header>
+
+       
+
+
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -275,22 +265,28 @@
                         <!-- to get an API token!-->
                         <form class="" method="post">
                             {% csrf_token %}
+
                             <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">Ime | Prezime</label>
                               <input name="name" type="text" class="form-control" id="name" placeholder="">
                             </div>
+                            
                             <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">E-mail addresa</label>
                               <input name="email" type="email" class="form-control" id="email" placeholder="e-mail">
                             </div>
+
                             <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">Tema | Kontakt br.</label>
                               <input name="subject" type="text" class="form-control" id="subject" placeholder="">
                             </div>
+
                             <div class="mb-3">
                               <label for="exampleFormControlTextarea1" class="form-label">Upit</label>
                               <textarea name="message" class="form-control" id="message" rows="3"></textarea>
                             </div>
+
+                            
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
@@ -583,6 +579,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
