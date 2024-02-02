@@ -1,148 +1,54 @@
-.slide-image {
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Swiper Container Styles */
+.swiper-container {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-.slider{
+/* Swiper Slide Styles */
+.swiper-slide {
     width: 400px;
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.sliders{
-    width: 500%;
-    height: 500px;
-    display: flex;
-}
-
-.sliders input{
-    display: none;
-}
-
-.slide{
-    width: 20%;
-    transition: 2s;
-}
-
-.slide img{
+.swiper-slide img{
     width: 400px;
     height: 500px;
+    object-fit: cover;
 }
 
-/*css for manual slide navigation*/
-
-.navigation-manual{
-    position: absolute;
-    width: 400px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-
+/* Swiper Pagination Styles */
+.swiper-pagination {
+    position: absolute; 
+    right: 50%;
+    bottom: 20px;
+    transform: translateX(50%);
 }
 
-.manual-btn{
-    border: 2px solid #00B592;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
+/* Swiper Navigation Button Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    font-size: 18px;
+    transform: translateY(-50%);
 }
 
-.manual-btn:not(:last-child){
-    margin-right: 20px;
+/* Adjust the navigation button position as needed */
+.swiper-button-next {
+    right: 20px;
 }
 
-.manual-btn:hover{
-    background: #00B592;
-}
-
-#radio1:checked ~ .first{
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first{
-    margin-left: -20%;
-}
-
-#radio3:checked ~ .first{
-    margin-left: -40%;
-}
-
-#radio4:checked ~ .first{
-    margin-left: -60%;
-}
-
-#radio5:checked ~ .first{
-    margin-left: -80%;
-}
-
-#radio6:checked ~ .first{
-    margin-left: -100%;
-}
-
-/*css for automatic navigation*/
-
-.navigation-auto{
-    position: absolute;
-    display: flex;
-    width: 400px;
-    justify-content: center;
-    margin-top: 460px;
-}
-
-.navigation-auto div{
-    border: 2px solid #00B592;
-    padding: 5px;
-    border-radius:10px;
-    transition: 1s;
-}
-
-.navigation-auto div:not(:last-child){
-    margin-right: 20px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background: #00B592;
-}
-
-#radio2:checked ~ .navigation-auto .auto-btn2{
-    background: #00B592;
-}
-
-#radio3:checked ~ .navigation-auto .auto-btn3{
-    background: #00B592;
-}
-
-#radio4:checked ~ .navigation-auto .auto-btn4{
-    background: #00B592;
-}
-
-#radio5:checked ~ .navigation-auto .auto-btn5{
-    background: #00B592;
-}
-
-#radio6:checked ~ .navigation-auto .auto-btn6{
-    background: #00B592;
-}
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .slider {
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        width: 100%; /* Adjusted width for better display on smaller screens */
-
-    }
-
-    .manual-btn,
-    .navigation-auto div {
-        padding: 5px 5px; /* Adjusted padding for smaller screens */
-    }
+.swiper-button-prev {
+    left: 20px;
 }

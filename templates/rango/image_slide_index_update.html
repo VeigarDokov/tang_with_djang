@@ -25,11 +25,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         -->
-        <!-- Swiper JS -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <!-- Swiper CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
     </head>
     <body id="page-top">
         <!-- Navigation  deleted text-upercase-->
@@ -179,72 +174,85 @@
                 </div>
             </div>
         </section>
-
-        <!-- Image Slide Section -->
+        <!--image slide-->
         <section class="page-section bg-dark text-white text-center" id="galerija">
-            <h2 class="page-section-heading text-uppercase">Galerija</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-        
-            <!-- Swiper Container -->
-            <div class="swiper-container">
-                
-                <link href="{% static 'css/style.css' %}" rel="stylesheet" />
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                        
-                        <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="{% static 'p1.jpg' %}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{% static 'p2.jpg' %}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{% static 'p3.jpg' %}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{% static 'p4.jpg' %}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{% static 'p5.jpg' %}" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{% static 'p6.jpg' %}" alt="">
-                    </div>
-                    
+            <div class="container d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0">Galerija</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="divider-custom-line"></div>
                 </div>
-                <!-- If we need pagination 
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                -->
-
             </div>
-        
-            <!-- Initialize Swiper -->
-            <script>
-                var swiper = new Swiper('.swiper-container', {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                });
-            </script>
+            <div class="slide-image" />
+                <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+                <!--imnage slider start-->
+                <div class="slider">
+                    <div class="sliders">
+                        <!--radio buttons start-->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <input type="radio" name="radio-btn" id="radio5">
+                        <input type="radio" name="radio-btn" id="radio6">
+                        <!--radio buttons end-->
+                        <!--slide images start-->
+                        <div class="slide first">
+                           <img src="{% static 'p1.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                           <img src="{% static 'p2.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                           <img src="{% static 'p3.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                           <img src="{% static 'p4.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                           <img src="{% static 'p5.jpg' %}" alt="">
+                        </div>
+                        <div class="slide">
+                           <img src="{% static 'p6.jpg' %}" alt="">
+                        </div>
+                        <!--slide images end-->
+                        <!--automatic navigation start-->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                            <div class="auto-btn6"></div>
+                        </div>
+                        <!--automatic navigation end-->
+                    </div>
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                        <label for="radio5" class="manual-btn"></label>
+                        <label for="radio6" class="manual-btn"></label>
+                    </div>
+                    <!--manual navigation end-->
+                </div>
+                <!--imnage slider stop-->
+                <script type="text/javascript">
+                var counter = 1;
+                setInterval(function(){
+                    document.getElementById('radio' + counter).checked = true;
+                    counter++;
+                    if(counter > 6){
+                        counter = 1;
+                    }
+                }, 5000);
+                </script>
+            </div>
         </section>
-        
-
-
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -259,6 +267,13 @@
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
                         <form class="" method="post">
                             {% csrf_token %}
                             <div class="mb-3">
@@ -277,6 +292,24 @@
                               <label for="exampleFormControlTextarea1" class="form-label">Upit</label>
                               <textarea name="message" class="form-control" id="message" rows="3"></textarea>
                             </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Uspješno ispunjena kontakt forma!</div>
+                                    Javit ćemo se u najkraćem mogućem roku. Smart-Relay.hr
+                                    <br />
+                                    <a href=""></a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
                             <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Pošalji</button>
                         </form>
                     </div>
