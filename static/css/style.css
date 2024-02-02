@@ -7,7 +7,7 @@
 }
 
 .slider{
-    width: 450px;
+    width: 400px;
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
@@ -29,7 +29,7 @@
 }
 
 .slide img{
-    width: 450px;
+    width: 400px;
     height: 500px;
 }
 
@@ -127,4 +127,22 @@
 
 #radio6:checked ~ .navigation-auto .auto-btn6{
     background: #00B592;
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .slider {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        width: 100%; /* Adjusted width for better display on smaller screens */
+
+    }
+
+    .manual-btn,
+    .navigation-auto div {
+        padding: 5px 5px; /* Adjusted padding for smaller screens */
+    }
 }
