@@ -39,9 +39,9 @@ body {
 /* Swiper Navigation Button Styles */
 .swiper-button-next,
 .swiper-button-prev {
+    position: swiper-container;
     color: white;
     font-size: 18px;
-    transform: translateY(-50%);
 }
 
 /* Adjust the navigation button position as needed */
