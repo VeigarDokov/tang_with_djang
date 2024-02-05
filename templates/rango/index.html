@@ -32,19 +32,21 @@
     </head>
     <body id="page-top">
         <!-- Navigation  deleted text-upercase-->
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg bg-white fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">www.smart-relay.hr</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand text-secondary" href="#page-top">
+                    <img src="{% static 'assets/logo.png' %}" height="90px">
+                </a>
+                <button class="navbar-toggler text-uppercase font-weight-bold text-white rounded" type="button" style="background-color: green" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">O NAMA</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">SMART RELAY PONUDA</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#galerija">GALERIJA</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">KONTAKT FORMA</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-secondary" href="#portfolio">SMART RELAY PONUDA</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-secondary" href="#about">O NAMA</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-secondary" href="#galerija">GALERIJA</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-secondary" href="#contact">KONTAKT</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,13 +55,13 @@
         <header class="masthead bg-dark text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <!-- <img class="masthead-avatar mb-5" src="{% static 'assets/img/logo.png' %}" alt="..." /> -->
+                <!-- <img class="masthead-avatar mb-5" src="{% static 'assets/logo.png' %}" alt="..." /> -->
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Smart Relay</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
@@ -67,8 +69,85 @@
                 <!--društvo s ograničenom odgovornošću za proizvodnju, nabavu, ugradnju i pametne solucije-->
             </div>
         </header>
+        <!-- Ponuda Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">PONUDA</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: green">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-lightbulb"></i></div>
+                            </div>
+                            <h1 align="center" style="color: green">SMART RELAY</h1>
+                            <!--<img class="img-fluid" src="{% static 'assets/p4.png' %}" alt="..." />-->
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: green">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-lightbulb"></i></div>
+                            </div>
+                            <h1 align="center" style="color: green">SMART HOUSE</h1>
+                            <!--<img class="img-fluid" src="{% static 'assets/sh10.png' %}" alt="..." />-->
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: green">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-lightbulb"></i></div>
+                            </div>
+                            <h1 align="center" style="color: green">SOLARNI PANELI</h1>
+                            <!--<img class="img-fluid" src="{% static 'assets/sp10.png' %}""assets/img/portfolio/circus.png" alt="..."
+                            />-->
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4 -->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: green">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-lightbulb"></i></div>
+                            </div>
+                            <h1 align="center" style="color: green">ELEKTRO INSTALACIJE</h1>
+                            <!--<img class="img-fluid" src="{% static 'assets/ei10.png' %}" alt="..." />-->
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 5 -->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: green">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-lightbulb"></i></div>
+                            </div>
+                            <h1 align="center" style="color: green">VIDEONADZOR</h1>
+                            <!--<img class="img-fluid" src="{% static 'assets/vn10.png' %}" alt="..." />-->
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 6
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: green">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-lightbulb"></i></div>
+                            </div>
+                            <img class="img-fluid" src="" alt="..." />
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
         <!-- O nama Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
+        <section class="page-section text-white mb-0" style="background-color: green" id="about">
             <div class="container">
                 <!-- About Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-white">O Nama</h2>
@@ -80,13 +159,13 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Dobrodošli na Smart Relay, vašeg partnera u svijetu elektroinstalacija i pametnih rješenja.
+                    <div class="col-lg-4 ms-auto"><p class="lead" style="font-size: 17px">Dobrodošli na Smart Relay, vašeg partnera u svijetu elektroinstalacija i pametnih rješenja.
                         Sa sjedištem u Hrvatskoj, naša tvrtka se ponosi širokim spektrom usluga u području elektroinstalacija, pametnih kuća i električnih instalacija u industrijskom sektoru.
                         Stručnost i inovacije s više od trideset stručnjaka i inženjera, Smart Relay donosi dugogodišnje iskustvo i stručnost u svaki projekt. 
                         Naša posvećenost inovacijama omogućava nam da pratimo najnovije trendove u industriji te pružamo cutting-edge rješenja koja odgovaraju Vašim potrebama.
                         Bavimo se elektroinstalacijama na svim razinama, od stambenih objekata do industrijskih postrojenja. 
                         Kvaliteta, pouzdanost i brza implementacija osiguravaju da vaši električni sustavi rade učinkovito i sigurno.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">
+                    <div class="col-lg-4 me-auto"><p class="lead" style="font-size: 17px">
                         Uz Smart Relay, Vaš dom postaje pametan dom. Integriramo najnovije tehnologije kako biste imali potpunu kontrolu nad rasvjetom, grijanjem, 
                         sigurnosnim sustavima i mnogo više, pružajući vam udobnost i energetsku učinkovitost.
                         Naš tim inženjera ima iskustvo u pružanju električnih rješenja za industrijski sektor. 
@@ -107,84 +186,14 @@
                 </div>
             </div>
         </section>
-        <!-- Ponuda Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">PONUDA</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/p4.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2 -->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/sh10.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/sp10.png' %}""assets/img/portfolio/circus.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4 -->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/ei10.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5 -->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/vn10.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="" alt="..." />
-                        </div>
-                    </div>
-                    -->
-                </div>
-            </div>
-        </section>
+
         <!-- Image Slide Section -->
         <section class="page-section bg-dark text-white text-center" id="galerija">
             <h2 class="page-section-heading text-uppercase">Galerija</h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Swiper Container -->
@@ -223,11 +232,11 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kontakt forma</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kontakt</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Contact Section Form-->
@@ -237,21 +246,21 @@
                             {% csrf_token %}
                             <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">Ime | Prezime</label>
-                              <input name="name" type="text" class="form-control" id="name" placeholder="">
+                              <input name="name" type="text" class="form-control" id="name" required placeholder="">
                             </div>
                             <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">E-mail addresa</label>
-                              <input name="email" type="email" class="form-control" id="email" placeholder="e-mail">
+                              <input name="email" type="email" class="form-control" id="email" required placeholder="e-mail">
                             </div>
                             <div class="mb-3">
                               <label for="exampleFormControlInput1" class="form-label">Tema | Kontakt br.</label>
-                              <input name="subject" type="text" class="form-control" id="subject" placeholder="">
+                              <input name="subject" type="text" class="form-control" id="subject" required placeholder="">
                             </div>
                             <div class="mb-3">
                               <label for="exampleFormControlTextarea1" class="form-label">Upit</label>
-                              <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+                              <textarea name="message" class="form-control" id="message" required rows="3"></textarea>
                             </div>
-                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Pošalji</button>
+                            <button class="btn btn-l" style="background-color: green; color: white" id="submitButton" type="submit">Pošalji</button>
                         </form>
                     </div>
                 </div>
@@ -276,7 +285,7 @@
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <h4 class="text-uppercase mb-4">Pronađite nas na internetu</h4>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
@@ -295,14 +304,16 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy;  Smart Relay d.o.o. 2023</small></div>
+            <div class="container" style="color: green"><small>Copyright &copy;  Smart Relay d.o.o. 2023</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <!--
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    -->
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -313,11 +324,12 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                    <!-- Portfolio Modal - Image
                                     <img class="img-fluid rounded mb-5" src="{% static 'assets/sr11.png' %}" alt="..." />
+                                    -->
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">
                                         Smart relay ili pametna sklopka predstavlja moderniziranu verziju tradicionalnih električnih sklopki koja je povezana s pametnim sustavom. Ova tehnologija omogućuje korisnicima daljinsko upravljanje, 
@@ -333,7 +345,7 @@
                                         Pametne sklopke su jedan od elemenata pametnih domova koji donose praktičnost, uštedu energije i povećanu sigurnost korisnicima. S razvojem tehnologije, ove pametne funkcije postaju sveprisutnije i pristupačnije širokom 
                                         rasponu korisnika.
                                     </p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn" style="background-color: green; color: white"  data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Zatvori
                                     </button>
@@ -348,7 +360,9 @@
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <!--
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    -->
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -359,11 +373,12 @@
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
 
-                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                    <!-- Portfolio Modal - Image
                                     <img class="img-fluid rounded mb-5" src="{% static 'assets/p2.png' %}" alt="..." />
+                                    -->
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">
                                         Pametne kuće predstavljaju revoluciju u načinu života, pružajući inovativna rješenja za udobnost, sigurnost i energetsku učinkovitost. Ovaj 
@@ -382,7 +397,7 @@
                                         U konačnici, pametna kuća predstavlja spoj modernih tehnologija koji čini život udobnijim, sigurnijim i prilagodljivijim individualnim 
                                         potrebama svakog stanara. Ovi inovativni sustavi stvaraju prostor u kojem se tehnologija koristi kako bi unaprijedila svaki aspekt svakodnevnog života.
                                     </p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn" style="background-color: green; color: white" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Zatvori
                                     </button>
@@ -397,7 +412,9 @@
         <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <!--
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    -->
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -407,14 +424,15 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                    <!-- Portfolio Modal - Image
                                     <img class="img-fluid rounded mb-5" src="{% static 'assets/sp11.png' %}" alt="..." />
+                                    -->
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">text solarni paneli ...</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn" style="background-color: green; color: white" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Zatvori
                                     </button>
@@ -429,7 +447,9 @@
         <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <!--
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    -->
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -439,14 +459,15 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                    <!-- Portfolio Modal - Image
                                     <img class="img-fluid rounded mb-5" src="{% static 'assets/ei11.png' %}" alt="..." />
+                                    -->
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">text elektroinstalacije ...</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn" style="background-color: green; color: white" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Zatvori
                                     </button>
@@ -461,7 +482,9 @@
         <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <!--
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    -->
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -471,14 +494,15 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                    <!-- Portfolio Modal - Image
                                     <img class="img-fluid rounded mb-5" src="{% static 'assets/vn11.png' %}" alt="..." />
+                                    -->
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">text videonadzor</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn" style="background-color: green; color: white" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Zatvori
                                     </button>
@@ -493,7 +517,9 @@
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
+                    <!--
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    -->
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -503,14 +529,15 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                    <!-- Portfolio Modal - Image
                                     <img class="img-fluid rounded mb-5" src="{% static 'assets/vn11.png' %}" alt="..." />
+                                    -->
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">text text ...</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn" style="background-color: green; color: white" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Zatvori
                                     </button>
