@@ -3,7 +3,8 @@ from django.urls import path, re_path
 from rango import views
 
 urlpatterns = [
-    re_path(r'^$', views.index, name='index'),
+    # re_path(r'^$', views.index, name='index'),
+    path('index.html', views.index, name='index'),
     path('smart_house.html', views.smart_house, name='smart_house'),
     re_path(r'^category/(?P<category_name_slug>[\w\-]+)/$',
             views.show_category, name='show_category'),
