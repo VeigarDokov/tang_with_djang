@@ -11,6 +11,7 @@
         Uspješna registracija:
         <a href="{% url 'index' %}">Smart-Relay.hr</a><br />
     {% else %}
+
         <strong>Smart-Relay.hr Registracija:</strong><br />
         <form id="user_form" method="post" action="{% url 'register' %}"
                                            enctype=multipart/form-data>

@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
-from rango.models import Category, Page
+from rango.models import Category, Page, ContactMessage
 from rango.forms import CategoryForm, ContactForm, PageForm
 from rango.forms import UserForm, UserProfileForm
 
@@ -27,7 +27,8 @@ def index(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return contact_sucess(request)
+            # return contact_sucess(request)
+            return HttpResponseRedirect(reverse('contact_sucess'))
     else:
         form = ContactForm()
 
@@ -115,23 +116,24 @@ def add_category(request):
     return render(request, "rango/add_category.html", {"form": form})
 
 
-def contact(request):
-    """contact viev"""
-    # form = ContactForm()
-    if request.method == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return contact_sucess(request)
-    else:
-        form = ContactForm()
-
-    return render(request, "rango/contact_form.html", {"form": form})
+#def contact(request):
+#    """contact viev"""
+#    # form = ContactForm()
+#    if request.method == "POST":
+#        form = ContactForm(request.POST)
+#        if form.is_valid():
+#            form.save()
+#            return contact_sucess(request)
+#    else:
+#        form = ContactForm()
+#
+#    return render(request, "rango/contact_form.html", {"form": form})
 
 
 def contact_sucess(request):
     """Thx mesage"""
     return render(request, "rango/contact_sucess.html")
+    # return HttpResponseRedirect(reverse('login'))
 
 
 @login_required
@@ -234,6 +236,11 @@ def user_login(request):
     If the request is a HTTP POST, try to pull out the relevant
     information.
     """
+    request.session.set_test_cookie()
+    if request.session.test_cookie_worked():
+        print("TEST COOKIE WORKED!")
+        request.session.delete_test_cookie()
+
     if request.method == "POST":
         # Gather the username and password provided by the user.
         # This information is obtained from the login form.
@@ -257,16 +264,29 @@ def user_login(request):
             if user.is_active:
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
-                login(request, user)
-                return HttpResponseRedirect(reverse('index'))
+                if username == "veigar":
+                    login(request, user)
+                    return HttpResponseRedirect('/admin')
+                elif username == str(user):
+                    login(request, user)
+                    # this code vill retrn user account html
+                    # return HttpResponseRedirect(reverse('ic'))
+                    return HttpResponseRedirect(reverse(str(user)))
+                # return HttpResponseRedirect('ic')
+                # return render(request, 'rango/ic.html')
+                # return redirect('/rango/ic.html/')
+                # return render(request, 'rango/smart_house.html')
+                else:
+                    """if user exist but acc is not developed by developer example admin"""
+                    return HttpResponseRedirect(reverse('login'))
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your Smart-Relay.hr account is disabled.")
         else:
             # Bad login details were provided. So we can't log the user in.
             print(f"Invalid login details: {username}, {password}")
-            return HttpResponse("""napravi login_error html povezi sa view
-            user_login().""")
+            # return HttpResponse("""napravi login_error html povezi sa view user_login().""")
+            return HttpResponseRedirect(reverse('login'))
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
@@ -288,5 +308,39 @@ def user_logout(request):
     Use the login_required decorator to ensure only those logged in can
     acess the view
     """
+    request.session.set_test_cookie()
+    if request.session.test_cookie_worked():
+        print("TEST COOKIE WORKED!")
+        request.session.delete_test_cookie()
+
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+@login_required
+def ic(request):
+    """
+    test ic
+    """
+    request.session.set_test_cookie()
+    if request.session.test_cookie_worked():
+        print("TEST COOKIE WORKED!")
+        request.session.delete_test_cookie()
+    else:
+        print("COOKIE NOT WORKING")
+
+    return render(request, 'rango/ic.html', {})
+
+
+@login_required
+def cto(request):
+    """cuto site smart-relay"""
+    messages = ContactMessage.objects.all()
+    context = {"messages": messages}
+
+    for message in messages:
+        if request.method == 'POST':
+            message.delete()
+            return HttpResponseRedirect(reverse('cto'))
+
+    return render(request, 'rango/cto.html', context)

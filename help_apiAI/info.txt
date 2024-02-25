@@ -1,0 +1,1 @@
+crontab -e # to run cron table an execute your program on time set

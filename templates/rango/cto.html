@@ -1,0 +1,60 @@
+{% extends 'rango/base.html' %}
+{% load static %}
+
+{% block title_block %}
+   Admin Smart-Relay d.o.o
+{% endblock %}
+
+{% block body_block %}
+
+<section class="page-section portfolio" id="kontakt-poruke">
+    <div class="container">
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">KONTAKT PORUKE</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-lightbulb" style="color: green"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <hr>
+        {% for message in messages %}
+          <p><b>Tema: </b>{{ message.subject }}</p>
+          <p><b>Pošiljatelj: </b>{{ message.name }}</p>
+          <p><b>E-mail: </b>{{ message.email }}</p>
+        
+          <p><b>Poruka:</b></p>
+          <p>{{ message.message }}</p>
+          <p>{{ message.datetime_submitted }}</p>
+        <div class="">
+            <!-- delete message -->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex "> </div>
+                    <button class="btn btn-danger">Izbriši</button>
+                </div>
+            </div>
+        </div> 
+        <hr>
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-body pb-5"> <div class="container">
+                    <div class="row justify-content-center">
+                        <p align="center">Želite li izbrisati kontakt poruku?</p>
+                      <div class="col-lg-8 d-flex justify-content-between"> 
+                        <form method="POST" action="">
+                          {% csrf_token %} <button type="submit" class="btn btn-danger">Izbriši</button>
+                        </form>
+                        <button class="btn btn-success" data-bs-dismiss="modal">Zatvori</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
