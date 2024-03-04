@@ -26,7 +26,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'django-insecure-!lnr=q596v^f1*1)0u31rzj&ta4$3e8rsxoif!)k#liyr(0pm5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['veigar.pythonanywhere.com', 'localhost', '127.0.0.1', 'www.smart-relay.hr']
 
@@ -35,7 +35,6 @@ ALLOWED_HOSTS = ['veigar.pythonanywhere.com', 'localhost', '127.0.0.1', 'www.sma
 INSTALLED_APPS = [
     # myapp
     'rango',
-    'apiAI',
     # sys apps
     'django.contrib.admin',
     'django.contrib.auth',

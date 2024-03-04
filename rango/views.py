@@ -4,12 +4,18 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.models import User
+
 
 from rango.models import Category, Page, ContactMessage
 from rango.forms import CategoryForm, ContactForm, PageForm
-from rango.forms import UserForm, UserProfileForm
+from rango.forms import UserForm, UserProfileForm, Portfolio
 
+from requests import Request, Session
+from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+import json
+import requests
 
 def index(request):
     """
@@ -236,11 +242,6 @@ def user_login(request):
     If the request is a HTTP POST, try to pull out the relevant
     information.
     """
-    request.session.set_test_cookie()
-    if request.session.test_cookie_worked():
-        print("TEST COOKIE WORKED!")
-        request.session.delete_test_cookie()
-
     if request.method == "POST":
         # Gather the username and password provided by the user.
         # This information is obtained from the login form.
@@ -267,11 +268,14 @@ def user_login(request):
                 if username == "veigar":
                     login(request, user)
                     return HttpResponseRedirect('/admin')
+                elif username == "cto":
+                    login(request, user)
+                    return HttpResponseRedirect(reverse('cto'))
                 elif username == str(user):
                     login(request, user)
                     # this code vill retrn user account html
-                    # return HttpResponseRedirect(reverse('ic'))
-                    return HttpResponseRedirect(reverse(str(user)))
+                    return HttpResponseRedirect(reverse('ic'))
+#                    return HttpResponseRedirect(reverse(str(user)))
                 # return HttpResponseRedirect('ic')
                 # return render(request, 'rango/ic.html')
                 # return redirect('/rango/ic.html/')
@@ -318,21 +322,64 @@ def user_logout(request):
 
 
 @login_required
+@permission_required("rango.add_category")
 def ic(request):
     """
     test ic
     """
-    request.session.set_test_cookie()
-    if request.session.test_cookie_worked():
-        print("TEST COOKIE WORKED!")
-        request.session.delete_test_cookie()
-    else:
-        print("COOKIE NOT WORKING")
+    username = request.user.username
+    print(username)
+    user = User.objects.get(username=username)
+    # change sandbox-api with pro-api as sugested on cmc site
+    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+    parameters = {
+      'start': '1',
+      'limit': '150',
+      'convert': 'USD'
+    }
+    # update your api key here
+    headers = {
+      'Accepts': 'application/json',
+      'X-CMC_PRO_API_KEY': '2239c60e-d1bf-4be8-8158-882ac87d5c9f',
+    }
 
-    return render(request, 'rango/ic.html', {})
+    session = Session()
+    session.headers.update(headers)
+
+    try:
+#        response = session.get(url, params=parameters)
+#        data = json.loads(response.text)
+        json = requests.get(url, params=parameters, headers=headers).json()
+        coins = json['data']
+#        print('sucess!!!!')
+#        print(type(coins))
+        for i in coins:
+            if i['symbol'] == 'BTC':
+                btc = i['quote']['USD']['price']
+                f_btc = f"{btc:.2f}"
+            elif i['symbol'] == 'XMR':
+                xmr = i['quote']['USD']['price']
+                f_xmr = f"{xmr:.2f}"
+            elif i['symbol'] == 'APE':
+                ape = i['quote']['USD']['price']
+                f_ape = f"{ape:.2f}"
+#                print(i['symbol'], i['quote']['USD']['price'])
+
+        acc_val = float(f_btc) * user.portfolio.btc + float(f_xmr) * user.portfolio.xmr + float(f_ape) * user.portfolio.ape
+        acc_val = f"{acc_val:.2f}"
+
+        crypto_context = {'btc': f_btc, 'xmr': f_xmr, 'ape': f_ape, 'acc_val': acc_val}
+
+#         print(data)
+    except (ConnectionError, Timeout, TooManyRedirects) as e:
+        print(e)
+#        print("error1!!")
+
+    return render(request, 'rango/ic.html', context=crypto_context)
 
 
 @login_required
+@permission_required("rango.view_contactmessage")
 def cto(request):
     """cuto site smart-relay"""
     messages = ContactMessage.objects.all()

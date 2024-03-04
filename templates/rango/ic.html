@@ -1,85 +1,22 @@
-<!DOCTYPE html>
+{% extends 'rango/minfin_base.html' %}
 {% load static %}
 {% load rango_template_tags %}
-<html>
-    <head>
-        <title>Ministarstvo Financija</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}xmr.png"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
-    </head> 
-    <!--Navigation bar-->
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-      <div class="container-fluid">Ministarstvo Financija
-          <a class="navbar-brand">
-              <!--
-                                  <img src="{{ MEDIA_URL }}bitcoin-symbol.png" height="20" width="20">
-                                  <img src="{{ MEDIA_URL }}xmr.png" height="20" width="20">
-                                  <img src="{{ MEDIA_URL }}apecoin.png" height="21" width="21"></a>
-              -->
-          <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>
-      </div>
-    </nav>
-    <!--Main Page-->
-    <body style="background-color: black; color: #566f69;">
-      <div class="">
-        <pre style="color: grey">
-
+{% block body_block %}
+<pre style="color: orange">
  Ballance:
 
-          <img src="{{ MEDIA_URL }}bitcoin-symbol.png" height="20" width="20"> 0.0
+  <img src="{{ MEDIA_URL }}bitcoin-symbol.png" height="20" width="20"> {{ user.portfolio.btc }}
+  price {{ btc }} $
 
-          <img src="{{ MEDIA_URL }}xmr.png" height="20" width="20"> 5.204575
+  <img src="{{ MEDIA_URL }}xmr.png" height="20" width="20"> {{ user.portfolio.xmr }}
+  price {{ xmr }} $
 
-          <img src="{{ MEDIA_URL }}apecoin.png" height="21" width="21"> 188.9534
-          <br>
- Ic:  
-   36.232% pozicije c3
-  Kazatomprom 5000 HRK = 29.420384
-      100% pozicije I3
-  Kazatomprom 5000 HRK = 26.7
- KAP (Kazatomprom) SUM = 56.120384 
-              sell KAP = sell 50% (28.060192) @ 37.7942 EUR
-      sell KAP1 => EUR = 1060.5125
-               SUM KAP = 28.060192 sell KAP  @ 25.8082 EUR
-                   EUR = 724.1830 buy APE (Ape coin) @ 3.8326 EUR
-                   APE = 188.9534
- 
-           KAP1 => EUR = 1060.5125 buy Meta @ 281.9 EUR
-                  Meta = 3.7620 sell Meta @ 161.5989 EUR
-                   EUR = 607.9350 buy AG (First Majestic Silver) @ 6.5329 EUR
-                    AG = 93.0574 sell AG @ 7.6669 EUR
-                   EUR = 713.4617 buy URNM (Sprott Uranium.M ETF) @ 7.0291 EUR
-                  URNM = 101.5011 sell URNM @ 7.1845 EUR
-                   EUR = 729.2346 + DIVIDEND (114.5697) - FEE(7.53)
-                   EUR = 836.2743 buy XMR (Monero) @ 160.6806 EUR 3.2.2023 12:25 EURBUSD EXR 1.0855
-                   XMR = 5.204575
- 
-     KAP DIVIDEND 2021 = 1.150 EUR x 56.120384 = 64.5384 EUR 
-     KAP DIVIDEND 2022 = 1.783 EUR x 28.060192 = 50.0313 EUR
-          SUM DIVIDEND = 114.5697 EUR 
- 
-                TX Fee = -2.4 EUR (sell Kzaztomprom buy Meta)
-                Tx Fee = -5.13 EUR (sell Meta, buy/sell AG, buy/sell URNM)
-               SUM Fee = -7.53 EUR
- 
-            Monero SUM = 5.204575
-               Ape SUM = 188.9534
- 
-          INVESTED HRK = 10000 HRK / 7.53 EUR EXR =  1328 EUR
-          INVESTED EUR = 1328
-          INVESTED SUM = 1328
-
- APROX ACCOUT VALUE FOR PRICES 14.02.2024
- 
-                   XMR = 120 EUR
-                   APE = 1.4 EUR
- 
-       APROX ACC VALUE = 5.2045 XMR * 120 EUR + 188.9534 APE * 1.4 EUR
-  APROX ACC VALUE SUMM = ~ 888.46 EUR
-        </pre>
-      </div>
-    </body>
-</html>
+  <img src="{{ MEDIA_URL }}apecoin.png" height="22" width="21"> {{ user.portfolio.ape }}
+  price {{ ape }} $
+</pre>
+  <pre style="color: green">  ACC Value {{ acc_val }} $ </pre>
+  <hr>
+<pre>
+    {{ user.portfolio.trades }}
+</pre>
+{% endblock %}

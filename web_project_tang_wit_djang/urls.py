@@ -24,7 +24,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     re_path(r'^rango/', include('rango.urls')),
-    re_path(r'^apiAI/', include('apiAI.urls')),
     # re_path r'^rango' map any URL starting with rango/ to be
     # handled by rango application
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

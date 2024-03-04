@@ -1,7 +1,7 @@
 """Required modules"""
 from django import forms
 from django.contrib.auth.models import User
-from rango.models import Page, Category, ContactMessage, UserProfile
+from rango.models import Page, Category, ContactMessage, UserProfile, Portfolio
 
 
 class CategoryForm(forms.ModelForm):
@@ -67,3 +67,9 @@ class UserProfileForm(forms.ModelForm):
         """visible fields"""
         model = UserProfile
         fields = ('website', 'picture')
+
+
+class Portfolio(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        fields = ('btc', 'xmr', 'ape', 'trades')

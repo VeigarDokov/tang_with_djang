@@ -61,3 +61,16 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Portfolio(models.Model):
+    """Portfolio model"""
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    btc = models.FloatField(default=0)
+    xmr = models.FloatField(default=0)
+    ape = models.FloatField(default=0)
+    trades = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return str(self.user)
