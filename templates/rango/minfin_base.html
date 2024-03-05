@@ -14,7 +14,7 @@
     <!--Navigation bar-->
     <nav class="navbar" style="background-color: #0d0d0e">
       <div class="container-fluid"><img src="{{ MEDIA_URL }}minfinlogo.png" height="25">
-        <a class="navbar-brand">
+        <span style="color: orange">{{ user.username }}</span>
             <!--
                                 <img src="{{ MEDIA_URL }}bitcoin-symbol.png" height="20" width="20">
                                 <img src="{{ MEDIA_URL }}xmr.png" height="20" width="20">
@@ -31,7 +31,7 @@
 {% endblock %}
 
       </div>
-    <div class="copyright py-4 text-center text-white" style="background-color: #0d0d0e; ">
+    <div class="copyright py-4 text-center" style="background-color: #0d0d0e; ">
         <div class="container"><small style="color: orange"><img src="{{ MEDIA_URL }}minfinlogo.png" height="20"> Copyright &copy;  MinFin 2020</small></div>
     </div>
     </body>

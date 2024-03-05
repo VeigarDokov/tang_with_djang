@@ -312,10 +312,6 @@ def user_logout(request):
     Use the login_required decorator to ensure only those logged in can
     acess the view
     """
-    request.session.set_test_cookie()
-    if request.session.test_cookie_worked():
-        print("TEST COOKIE WORKED!")
-        request.session.delete_test_cookie()
 
     logout(request)
     return HttpResponseRedirect(reverse('index'))
@@ -328,7 +324,6 @@ def ic(request):
     test ic
     """
     username = request.user.username
-    print(username)
     user = User.objects.get(username=username)
     # change sandbox-api with pro-api as sugested on cmc site
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'

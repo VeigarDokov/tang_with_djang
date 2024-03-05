@@ -25,7 +25,7 @@
         
           <p><b>Poruka:</b></p>
           <p>{{ message.message }}</p>
-          <p>{{ message.datetime_submitted }}</p>
+          <p>{{ message.datetime_submitted|time:'H:i'}} {{ message.datetime_submitted|date:'d/m/Y' }}</p>
         <div class="">
             <!-- delete message -->
             <div class="col-md-6 col-lg-4 mb-5">
