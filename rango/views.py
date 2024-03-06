@@ -360,10 +360,27 @@ def ic(request):
                 f_ape = f"{ape:.2f}"
 #                print(i['symbol'], i['quote']['USD']['price'])
 
-        acc_val = float(f_btc) * user.portfolio.btc + float(f_xmr) * user.portfolio.xmr + float(f_ape) * user.portfolio.ape
-        acc_val = f"{acc_val:.2f}"
+        acc_val = (float(f_btc) * user.portfolio.btc +
+                   float(f_xmr) * user.portfolio.xmr +
+                   float(f_ape) * user.portfolio.ape)
+        btc_val = float(f_btc) * user.portfolio.btc
+        xmr_val = float(f_xmr) * user.portfolio.xmr
+        ape_val = float(f_ape) * user.portfolio.ape
 
-        crypto_context = {'btc': f_btc, 'xmr': f_xmr, 'ape': f_ape, 'acc_val': acc_val}
+        acc_val = f"{acc_val:.2f}"
+        btc_val = f"{btc_val:.2f}"
+        xmr_val = f"{xmr_val:.2f}"
+        ape_val = f"{ape_val:.2f}"
+
+        crypto_context = {
+                'btc': f_btc,
+                'xmr': f_xmr,
+                'ape': f_ape,
+                'acc_val': acc_val,
+                'btc_val': btc_val,
+                'xmr_val': xmr_val,
+                'ape_val': ape_val,
+                }
 
 #         print(data)
     except (ConnectionError, Timeout, TooManyRedirects) as e:
